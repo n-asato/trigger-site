@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= display_meta_tags(default_meta_tags) %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="flex flex-col min-h-screen font-sans antialiased text-gray-900 bg-white">
+    <%= render 'shared/header' %>
+    
+    <main class="flex-grow mt-0 pt-0">
+      <%= yield %>
+    </main>
+
+    <%= render 'shared/footer' %>
+  </body>
+</html>

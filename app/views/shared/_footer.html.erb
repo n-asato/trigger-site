@@ -1,0 +1,10 @@
+<footer class="bg-gray-50 border-t border-gray-100 py-12 mt-auto">
+  <div class="container mx-auto px-4 text-center">
+    <nav class="flex justify-center gap-8 mb-8">
+      <%= link_to "私について", about_path, class: "text-sm text-gray-600 hover:text-black" %>
+      <%= link_to "できること", service_path, class: "text-sm text-gray-600 hover:text-black" %>
+      <%= link_to "やってきたこと", works_path, class: "text-sm text-gray-600 hover:text-black" %>
+    </nav>
+    <p class="text-xs text-gray-400">&copy; <%= Time.current.year %> KATELIER. All Rights Reserved.</p>
+  </div>
+</footer>

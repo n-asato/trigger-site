@@ -1,0 +1,119 @@
+<div class="pb-8">
+  <!-- Main Visual -->
+  <section id="mainVisual" class="w-screen bg-white overflow-hidden mb-0 p-0 m-0">
+    <!-- Desktop Layout -->
+    <div class="hidden md:block w-full p-0 m-0">
+      <%= image_tag "hero_cover.png", class: "w-full h-auto", alt: "KATELIER" %>
+    </div>
+
+    <!-- Mobile Layout -->
+    <div class="md:hidden w-full flex items-center justify-center">
+      <%= image_tag "hero_mobile.png", class: "w-full h-auto object-cover align-top" %>
+    </div>
+  </section>
+
+  <div class="space-y-40 mt-10">
+  <!-- Services -->
+  <section class="container mx-auto px-4">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-bold mb-4 text-[#808080]">できること</h2>
+    </div>
+    
+    <!-- Services Grid - 5 items horizontal, 教えます in center -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+      <!-- 作ります -->
+      <%= link_to service_detail_path('development'), class: "order-2 md:order-none text-center p-6 rounded-2xl hover:bg-gray-50 block h-full transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-gray-100" do %>
+        <div class="w-14 h-14 mx-auto mb-5">
+          <%= image_tag "icon_development.png", class: "w-full h-full object-contain", alt: "Development" %>
+        </div>
+        <h3 class="text-lg font-bold mb-2 text-[#808080]">作ります</h3>
+        <p class="text-xs text-gray-400 mb-3 uppercase tracking-wider">DEVELOPMENT</p>
+        <p class="text-gray-600 leading-relaxed text-sm">
+          ホームページやWebアプリケーション等の制作を行います。
+        </p>
+      <% end %>
+
+      <!-- 守ります -->
+      <%= link_to service_detail_path('maintenance'), class: "order-3 md:order-none text-center p-6 rounded-2xl hover:bg-gray-50 block h-full transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-gray-100" do %>
+        <div class="w-14 h-14 mx-auto mb-5">
+          <%= image_tag "icon_maintenance.png", class: "w-full h-full object-contain", alt: "Maintenance" %>
+        </div>
+        <h3 class="text-lg font-bold mb-2 text-[#808080]">守ります</h3>
+        <p class="text-xs text-gray-400 mb-3 uppercase tracking-wider">MAINTENANCE</p>
+        <p class="text-gray-600 leading-relaxed text-sm">
+          システムの保守、メンテナンス、アップデート対応を行います。
+        </p>
+      <% end %>
+
+      <!-- 教えます (center, slightly larger) -->
+      <%= link_to service_detail_path('education'), class: "order-first md:order-none relative w-full rounded-2xl hover:bg-gray-50 block h-full transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-gray-100" do %>
+        <span class="absolute bg-black text-white text-sm md:text-xs font-bold px-4 py-2 md:px-3 md:py-1.5 rounded-full tracking-wider z-20" style="top: 0; right: 0; margin-top: 0.5rem; margin-right: 0.5rem;">MAIN</span>
+        <div class="p-6 h-full flex flex-col items-center text-center">
+          <div class="w-14 h-14 mx-auto mb-5">
+            <%= image_tag "icon_education.png", class: "w-full h-full object-contain", alt: "Education" %>
+          </div>
+          <h3 class="text-lg font-bold mb-2 text-[#808080]">教えます</h3>
+          <p class="text-xs text-gray-400 mb-3 uppercase tracking-wider">EDUCATION</p>
+          <p class="text-gray-600 leading-relaxed text-sm">
+            大人・子どもを問わず、一人ひとりに寄り添ったオーダーメイド型のプログラミング教育を提供しています。
+          </p>
+        </div>
+      <% end %>
+
+      <!-- 改善します -->
+      <%= link_to service_detail_path('improvement'), class: "order-4 md:order-none text-center p-6 rounded-2xl hover:bg-gray-50 block h-full transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-gray-100" do %>
+        <div class="w-14 h-14 mx-auto mb-5">
+          <%= image_tag "icon_improvement.png", class: "w-full h-full object-contain", alt: "Improvement" %>
+        </div>
+        <h3 class="text-lg font-bold mb-2 text-[#808080]">改善します</h3>
+        <p class="text-xs text-gray-400 mb-3 uppercase tracking-wider">IMPROVEMENT</p>
+        <p class="text-gray-600 leading-relaxed text-sm">
+          プログラミングやAIを活用した効率化を提案・実装し、生産性向上に寄与します。
+        </p>
+      <% end %>
+
+      <!-- 相談乗ります -->
+      <%= link_to service_detail_path('consulting'), class: "order-5 md:order-none text-center p-6 rounded-2xl hover:bg-gray-50 block h-full transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-gray-100" do %>
+        <div class="w-14 h-14 mx-auto mb-5">
+          <%= image_tag "icon_consulting.png", class: "w-full h-full object-contain", alt: "Consulting" %>
+        </div>
+        <h3 class="text-lg font-bold mb-2 text-[#808080]">相談乗ります</h3>
+        <p class="text-xs text-gray-400 mb-3 uppercase tracking-wider">CONSULTING</p>
+        <p class="text-gray-600 leading-relaxed text-sm">
+          「何から始めればいいか分からない」「やりたいことをどう実現すればいい？」といったお悩みについて、気軽にご相談いただけます。
+        </p>
+      <% end %>
+    </div>
+  </section>
+
+  <!-- Works -->
+  <section class="container mx-auto px-4">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-bold mb-4 text-[#808080]">やってきたこと</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <% @recent_works.each do |work| %>
+        <%= link_to work_path(slug: work.slug), class: "group block" do %>
+          <div class="aspect-[4/3] bg-gray-100 overflow-hidden mb-4 relative">
+            <% if work.main_image.attached? %>
+              <%= image_tag work.main_image, class: "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" %>
+            <% else %>
+              <div class="w-full h-full flex items-center justify-center text-gray-300 bg-gray-50">
+                No Image
+              </div>
+            <% end %>
+            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300"></div>
+          </div>
+          <h3 class="text-lg font-bold text-[#808080] group-hover:text-gray-600 transition-colors"><%= work.title %></h3>
+          <p class="text-sm text-gray-500 mt-1"><%= work.category %></p>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="text-center mt-16">
+      <%= link_to "View All Works", works_path, class: "inline-block px-8 py-3 bg-gray-900 text-white text-sm tracking-widest hover:bg-gray-700 transition-colors" %>
+    </div>
+  </section>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="container mx-auto px-4 py-20 mb-20">
+  <!-- Service Header -->
+  <div class="text-center mb-16">
+    <div class="w-24 h-24 mx-auto mb-6">
+      <%= image_tag @service[:icon], class: "w-full h-full object-contain", alt: @service[:english] %>
+    </div>
+    <h1 class="text-4xl font-bold mb-4 text-[#808080]"><%= @service[:title] %></h1>
+    <p class="text-lg text-gray-400 uppercase tracking-wider mb-6"><%= @service[:english] %></p>
+    <p class="text-gray-600 leading-relaxed max-w-2xl mx-auto">
+      <%= @service[:description] %>
+    </p>
+  </div>
+
+  <!-- Related Works -->
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-2xl font-bold mb-8 text-[#808080] text-center">関連する実績</h2>
+    
+    <% if @works.any? %>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <% @works.each do |work| %>
+          <%= link_to work_path(work.slug), class: "group block" do %>
+            <div class="relative aspect-video bg-gray-100 rounded-lg overflow-hidden mb-4">
+              <% if work.main_image.attached? %>
+                <%= image_tag work.main_image, class: "w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" %>
+              <% else %>
+                <div class="w-full h-full flex items-center justify-center text-gray-300">
+                  <span class="text-4xl">📷</span>
+                </div>
+              <% end %>
+              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300"></div>
+            </div>
+            <h3 class="text-lg font-bold text-[#808080] group-hover:text-gray-600 transition-colors"><%= work.title %></h3>
+            <p class="text-sm text-gray-500 mt-1"><%= work.year %></p>
+          <% end %>
+        <% end %>
+      </div>
+    <% else %>
+      <div class="text-center py-16 text-gray-400">
+        <p>まだ実績がありません</p>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Back Link -->
+  <div class="text-center mt-16">
+    <%= link_to "← トップに戻る", root_path, class: "text-gray-500 hover:text-gray-700 transition-colors" %>
+  </div>
+</div>

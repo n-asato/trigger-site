@@ -1,0 +1,102 @@
+<div class="container mx-auto px-4 py-20 mb-20">
+  <div class="text-center mb-16">
+    <h1 class="text-3xl font-bold mb-4 text-[#808080]">できること</h1>
+  </div>
+
+  <div class="max-w-4xl mx-auto space-y-24">
+    <!-- Service Item 1: 教えます (Emphasized) -->
+    <%= link_to service_detail_path('education'), class: "block transform hover:-translate-y-1 transition-transform duration-300" do %>
+      <div class="flex flex-col md:flex-row gap-12 items-start bg-gray-50 p-8 rounded-2xl border border-transparent hover:border-gray-200 hover:shadow-lg transition-all">
+        <div class="w-full md:w-1/3 aspect-video bg-white flex items-center justify-center rounded-lg p-8">
+          <%= image_tag "icon_education.png", class: "w-24 h-24 object-contain", alt: "Education" %>
+        </div>
+        <div class="w-full md:w-2/3">
+          <h2 class="text-3xl font-bold mb-2 text-[#808080]">教えます</h2>
+          <p class="text-sm text-gray-400 mb-6 uppercase tracking-wider">EDUCATION</p>
+          <div class="prose text-gray-600 leading-relaxed">
+            <p>
+              大人・子どもを問わず、一人ひとりに寄り添ったオーダーメイド型のプログラミング教育を提供しています。
+            </p>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+
+    <!-- Service Item 2: 作ります -->
+    <%= link_to service_detail_path('development'), class: "block transform hover:-translate-y-1 transition-transform duration-300" do %>
+      <div class="flex flex-col md:flex-row gap-12 items-start p-8 rounded-2xl border border-transparent hover:border-gray-200 hover:shadow-lg transition-all">
+        <div class="w-full md:w-1/3 aspect-video bg-gray-50 flex items-center justify-center rounded-lg p-8">
+          <%= image_tag "icon_development.png", class: "w-20 h-20 object-contain", alt: "Development" %>
+        </div>
+        <div class="w-full md:w-2/3">
+          <h2 class="text-2xl font-bold mb-2 text-[#808080]">作ります</h2>
+          <p class="text-sm text-gray-400 mb-6 uppercase tracking-wider">DEVELOPMENT</p>
+          <div class="prose text-gray-600 leading-relaxed">
+            <p>
+              ホームページやWebアプリケーション等の制作を行います。
+            </p>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+
+    <!-- Service Item 3: 守ります -->
+    <%= link_to service_detail_path('maintenance'), class: "block transform hover:-translate-y-1 transition-transform duration-300" do %>
+      <div class="flex flex-col md:flex-row gap-12 items-start p-8 rounded-2xl border border-transparent hover:border-gray-200 hover:shadow-lg transition-all">
+        <div class="w-full md:w-1/3 aspect-video bg-gray-50 flex items-center justify-center rounded-lg p-8">
+          <%= image_tag "icon_maintenance.png", class: "w-20 h-20 object-contain", alt: "Maintenance" %>
+        </div>
+        <div class="w-full md:w-2/3">
+          <h2 class="text-2xl font-bold mb-2 text-[#808080]">守ります</h2>
+          <p class="text-sm text-gray-400 mb-6 uppercase tracking-wider">MAINTENANCE</p>
+          <div class="prose text-gray-600 leading-relaxed">
+            <p>
+              システムの保守、メンテナンス、アップデート対応を行います。
+            </p>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+
+    <!-- Service Item 4: 改善します -->
+    <%= link_to service_detail_path('improvement'), class: "block transform hover:-translate-y-1 transition-transform duration-300" do %>
+      <div class="flex flex-col md:flex-row gap-12 items-start p-8 rounded-2xl border border-transparent hover:border-gray-200 hover:shadow-lg transition-all">
+        <div class="w-full md:w-1/3 aspect-video bg-gray-50 flex items-center justify-center rounded-lg p-8">
+          <%= image_tag "icon_improvement.png", class: "w-20 h-20 object-contain", alt: "Improvement" %>
+        </div>
+        <div class="w-full md:w-2/3">
+          <h2 class="text-2xl font-bold mb-2 text-[#808080]">改善します</h2>
+          <p class="text-sm text-gray-400 mb-6 uppercase tracking-wider">IMPROVEMENT</p>
+          <div class="prose text-gray-600 leading-relaxed">
+            <p>
+              プログラミングやAIを活用した効率化を提案・実装し、生産性向上に寄与します。
+            </p>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+
+    <!-- Service Item 5: 相談乗ります -->
+    <%= link_to service_detail_path('consulting'), class: "block transform hover:-translate-y-1 transition-transform duration-300" do %>
+      <div class="flex flex-col md:flex-row gap-12 items-start p-8 rounded-2xl border border-transparent hover:border-gray-200 hover:shadow-lg transition-all">
+        <div class="w-full md:w-1/3 aspect-video bg-gray-50 flex items-center justify-center rounded-lg p-8">
+          <%= image_tag "icon_consulting.png", class: "w-20 h-20 object-contain", alt: "Consulting" %>
+        </div>
+        <div class="w-full md:w-2/3">
+          <h2 class="text-2xl font-bold mb-2 text-[#808080]">相談乗ります</h2>
+          <p class="text-sm text-gray-400 mb-6 uppercase tracking-wider">CONSULTING</p>
+          <div class="prose text-gray-600 leading-relaxed">
+            <p>
+              「何から始めればいいか分からない」「やりたいことをどう実現すればいい？」といったお悩みについて、気軽にご相談いただけます。
+            </p>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

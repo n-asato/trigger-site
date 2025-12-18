@@ -1,0 +1,80 @@
+<div class="max-w-4xl mx-auto">
+  <div class="flex items-center justify-between mb-8">
+    <h1 class="text-3xl font-bold">Work Details</h1>
+    <div class="flex gap-4">
+      <%= link_to "Back to List", admin_works_path, class: "px-4 py-2 border border-gray-300 rounded text-sm text-gray-700 hover:bg-gray-50 bg-white" %>
+      <%= link_to "Create New Work", new_admin_work_path, class: "px-4 py-2 border border-gray-300 rounded text-sm text-gray-700 hover:bg-gray-50 bg-white" %>
+      <%= link_to "Edit Work", edit_admin_work_path(@work), class: "px-4 py-2 bg-black text-white rounded text-sm hover:bg-gray-800" %>
+    </div>
+  </div>
+
+  <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+    <!-- Header info -->
+    <div class="p-8 border-b">
+      <div class="flex justify-between items-start">
+        <div>
+          <h2 class="text-2xl font-bold mb-2"><%= @work.title %></h2>
+          <p class="text-gray-500 font-mono text-sm">/<%= @work.slug %></p>
+        </div>
+        <div class="text-right">
+          <% if @work.is_published %>
+            <span class="px-3 py-1 rounded-full bg-green-100 text-green-800 text-sm font-medium">Published</span>
+          <% else %>
+            <span class="px-3 py-1 rounded-full bg-gray-100 text-gray-800 text-sm font-medium">Draft</span>
+          <% end %>
+          <p class="text-xs text-gray-400 mt-2">Updated: <%= @work.updated_at.to_date %></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Images -->
+    <div class="p-8 border-b bg-gray-50">
+      <h3 class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Main Image</h3>
+      <% if @work.main_image.attached? %>
+        <%= image_tag @work.main_image.variant(resize_to_limit: [600, 400]), class: "rounded-lg border shadow-sm" %>
+      <% else %>
+        <p class="text-sm text-gray-400 italic">No main image.</p>
+      <% end %>
+
+      <% if @work.gallery_images.attached? %>
+        <h3 class="text-sm font-bold text-gray-500 uppercase tracking-wider mt-8 mb-4">Gallery</h3>
+        <div class="flex flex-wrap gap-4">
+          <% @work.gallery_images.each do |img| %>
+            <%= image_tag img.variant(resize_to_limit: [200, 200]), class: "rounded-lg border shadow-sm w-32 h-32 object-cover" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- Details -->
+    <div class="p-8 grid grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Client</h3>
+        <p class="font-medium"><%= @work.client_name %></p>
+      </div>
+      <div>
+        <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Year</h3>
+        <p class="font-medium"><%= @work.year %></p>
+      </div>
+      <div class="col-span-2">
+        <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Description</h3>
+        <div class="prose text-sm text-gray-700 max-w-none">
+          <%= simple_format @work.description %>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">Service Tags</h3>
+        <p class="font-medium">
+          <% service_names = {
+            'education' => '教えます',
+            'development' => '作ります',
+            'maintenance' => '守ります',
+            'improvement' => '改善します',
+            'consulting' => '相談乗ります'
+          } %>
+          <%= @work.service_tags.map { |tag| service_names[tag] || tag }.join(', ') %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

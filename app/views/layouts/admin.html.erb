@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Base | Portfolio</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="bg-gray-100 min-h-screen">
+    <% if session[:admin_user_id] %>
+      <nav class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 flex items-center justify-between h-16">
+          <div class="font-bold text-xl">Admin Console</div>
+          <div class="flex items-center gap-6">
+            <%= link_to "Back to TOP", root_path, class: "hover:text-gray-300 mr-4" %>
+            <%= link_to "Works", admin_works_path, class: "hover:text-gray-300" %>
+            <%= button_to "Logout", admin_logout_path, method: :delete, class: "hover:text-gray-300 text-sm" %>
+          </div>
+        </div>
+      </nav>
+    <% end %>
+
+    <main class="container mx-auto px-4 py-8">
+      <% if notice %>
+        <div class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 mb-4" role="alert">
+          <p><%= notice %></p>
+        </div>
+      <% end %>
+      <% if alert %>
+        <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4" role="alert">
+          <p><%= alert %></p>
+        </div>
+      <% end %>
+
+      <%= yield %>
+    </main>
+  </body>
+</html>

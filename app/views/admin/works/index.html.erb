@@ -1,0 +1,51 @@
+<div class="flex items-center justify-between mb-8">
+  <h1 class="text-3xl font-bold">Works Management</h1>
+  <%= link_to "Add New Work", new_admin_work_path, class: "bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition-colors" %>
+</div>
+
+<div class="bg-white rounded-lg shadow overflow-hidden">
+  <table class="min-w-full divide-y divide-gray-200">
+    <thead class="bg-gray-50">
+      <tr>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Image</th>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
+
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+        <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+      </tr>
+    </thead>
+    <tbody class="bg-white divide-y divide-gray-200">
+      <% @works.each do |work| %>
+        <tr>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <% if work.main_image.attached? %>
+              <%= image_tag work.main_image.variant(resize_to_limit: [100, 100]), class: "h-12 w-12 object-cover rounded" %>
+            <% else %>
+              <div class="h-12 w-12 bg-gray-100 rounded flex items-center justify-center text-xs text-gray-400">No img</div>
+            <% end %>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="text-sm font-medium text-gray-900"><%= work.title %></div>
+            <div class="text-xs text-gray-500"><%= work.slug %></div>
+          </td>
+
+          <td class="px-6 py-4 whitespace-nowrap">
+            <% if work.is_published %>
+              <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                Published
+              </span>
+            <% else %>
+              <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">
+                Draft
+              </span>
+            <% end %>
+          </td>
+          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+            <%= link_to "Edit", edit_admin_work_path(work), class: "text-indigo-600 hover:text-indigo-900 mr-4" %>
+            <%= link_to "Delete", admin_work_path(work), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "text-red-600 hover:text-red-900" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

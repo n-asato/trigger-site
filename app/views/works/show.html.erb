@@ -1,0 +1,71 @@
+<div class="pb-20">
+  <!-- Hero Image -->
+  <div class="w-full h-[50vh] md:h-[70vh] bg-gray-100 relative mb-16">
+    <% if @work.main_image.attached? %>
+      <%= image_tag @work.main_image, class: "w-full h-full object-cover" %>
+    <% else %>
+      <div class="w-full h-full flex items-center justify-center text-gray-300">
+        No Image
+      </div>
+    <% end %>
+  </div>
+
+  <div class="container mx-auto px-4 max-w-4xl">
+    <!-- Header -->
+    <header class="mb-16 border-b pb-12">
+      <h1 class="text-3xl md:text-4xl font-bold mb-4"><%= @work.title %></h1>
+      <div class="flex flex-wrap gap-x-8 gap-y-2 text-sm text-gray-600">
+        <p><span class="text-gray-400 mr-2">CLIENT</span> <%= @work.client_name || '-' %></p>
+        <p><span class="text-gray-400 mr-2">YEAR</span> <%= @work.year %></p>
+      </div>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+      <!-- Main Content -->
+      <div class="md:col-span-8 space-y-12">
+        <section class="prose prose-lg text-gray-700 break-all">
+          <%= simple_format @work.description %>
+        </section>
+
+        <!-- Gallery -->
+        <% if @work.gallery_images.attached? %>
+          <section class="space-y-8">
+            <% @work.gallery_images.each do |image| %>
+              <div class="bg-gray-50">
+                <%= image_tag image, class: "w-full h-auto" %>
+              </div>
+            <% end %>
+          </section>
+        <% end %>
+
+        <div class="pt-12 mt-12 border-t">
+          <%= link_to "← Back to Works", works_path, class: "text-sm font-bold hover:text-gray-600 transition-colors" %>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="md:col-span-4 space-y-8">
+        <% if @work.external_link.present? %>
+          <div>
+            <a href="<%= @work.external_link %>" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-black text-white text-sm font-bold hover:bg-gray-800 transition-colors rounded-full">
+              Visit Website ↗
+            </a>
+          </div>
+        <% end %>
+
+
+
+        <% if @work.technologies.present? %>
+          <div>
+            <h3 class="text-xs font-bold text-gray-400 tracking-wider mb-3 uppercase">使用技術</h3>
+            <div class="flex flex-wrap gap-2">
+              <% (@work.technologies || []).each do |tech| %>
+                <span class="px-3 py-1 bg-gray-100 text-xs text-gray-600 rounded-full">#<%= tech %></span>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </aside>
+    </div>
+  </div>
+</div>
