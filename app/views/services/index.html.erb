@@ -4,21 +4,20 @@
   </div>
 
   <div class="max-w-4xl mx-auto space-y-24">
-    <!-- Service Item 1: 教えます (Emphasized) -->
+    <!-- Service Item 1: 整えます (Emphasized) -->
     <%= link_to service_detail_path('education'), class: "block transform hover:-translate-y-1 transition-transform duration-300" do %>
       <div class="flex flex-col md:flex-row gap-12 items-start bg-gray-50 p-8 rounded-2xl border border-transparent hover:border-gray-200 hover:shadow-lg transition-all">
         <div class="w-full md:w-1/3 aspect-video bg-white flex items-center justify-center rounded-lg p-8">
           <%= image_tag "icon_education.png", class: "w-24 h-24 object-contain", alt: "Education" %>
         </div>
         <div class="w-full md:w-2/3">
-          <h2 class="text-3xl font-bold mb-2 text-[#808080]">教えます</h2>
-          <p class="text-sm text-gray-400 mb-6 uppercase tracking-wider">EDUCATION</p>
+          <h2 class="text-3xl font-bold mb-2 text-[#808080]">整えます</h2>
+          <p class="text-sm text-gray-400 mb-6 uppercase tracking-wider">SETUP</p>
           <div class="prose text-gray-600 leading-relaxed">
             <p>
-              大人・子どもを問わず、一人ひとりに寄り添ったオーダーメイド型のプログラミング教育を提供しています。
+              PCを始めとしたIT機器の選定とそれを使用するWi-Fi環境等、働く環境を整えます。
             </p>
           </div>
-
         </div>
       </div>
     <% end %>
@@ -42,21 +41,20 @@
       </div>
     <% end %>
 
-    <!-- Service Item 3: 守ります -->
+    <!-- Service Item 3: 代わります -->
     <%= link_to service_detail_path('maintenance'), class: "block transform hover:-translate-y-1 transition-transform duration-300" do %>
       <div class="flex flex-col md:flex-row gap-12 items-start p-8 rounded-2xl border border-transparent hover:border-gray-200 hover:shadow-lg transition-all">
         <div class="w-full md:w-1/3 aspect-video bg-gray-50 flex items-center justify-center rounded-lg p-8">
           <%= image_tag "icon_maintenance.png", class: "w-20 h-20 object-contain", alt: "Maintenance" %>
         </div>
         <div class="w-full md:w-2/3">
-          <h2 class="text-2xl font-bold mb-2 text-[#808080]">守ります</h2>
-          <p class="text-sm text-gray-400 mb-6 uppercase tracking-wider">MAINTENANCE</p>
+          <h2 class="text-2xl font-bold mb-2 text-[#808080]">代わります</h2>
+          <p class="text-sm text-gray-400 mb-6 uppercase tracking-wider">REPRESENT</p>
           <div class="prose text-gray-600 leading-relaxed">
             <p>
-              システムの保守、メンテナンス、アップデート対応を行います。
+              貴社のIT担当として、社内・社外のあらゆるやり取りの取仕切りを行います。
             </p>
           </div>
-
         </div>
       </div>
     <% end %>

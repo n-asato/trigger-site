@@ -2,13 +2,15 @@
   <!-- Main Visual -->
   <section id="mainVisual" class="w-screen bg-white overflow-hidden mb-0 p-0 m-0">
     <!-- Desktop Layout -->
-    <div class="hidden md:block w-full p-0 m-0">
-      <%= image_tag "hero_cover.png", class: "w-full h-auto", alt: "KATELIER" %>
+    <!-- Desktop Layout -->
+    <div class="hidden md:block w-full h-[550px] p-0 m-0 relative">
+      <%= image_tag "header_cover.png", class: "w-full h-full object-cover", alt: "TRiGGER" %>
+      <%= image_tag "logos.png", class: "absolute top-1/2 left-[15%] transform -translate-y-1/2 w-auto h-120 z-10", alt: "Logos" %>
     </div>
 
     <!-- Mobile Layout -->
-    <div class="md:hidden w-full flex items-center justify-center">
-      <%= image_tag "hero_mobile.png", class: "w-full h-auto object-cover align-top" %>
+    <div class="md:hidden w-full h-[350px] flex items-center justify-center">
+      <%= image_tag "hero_mobile.jpg", class: "w-full h-full object-cover align-top" %>
     </div>
   </section>
 
@@ -19,7 +21,7 @@
       <h2 class="text-3xl font-bold mb-4 text-[#808080]">できること</h2>
     </div>
     
-    <!-- Services Grid - 5 items horizontal, 教えます in center -->
+    <!-- Services Grid - 5 items horizontal, 整えます in center -->
     <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
       <!-- 作ります -->
       <%= link_to service_detail_path('development'), class: "order-2 md:order-none text-center p-6 rounded-2xl hover:bg-gray-50 block h-full transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-gray-100" do %>
@@ -33,29 +35,28 @@
         </p>
       <% end %>
 
-      <!-- 守ります -->
+      <!-- 代わります -->
       <%= link_to service_detail_path('maintenance'), class: "order-3 md:order-none text-center p-6 rounded-2xl hover:bg-gray-50 block h-full transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-gray-100" do %>
         <div class="w-14 h-14 mx-auto mb-5">
           <%= image_tag "icon_maintenance.png", class: "w-full h-full object-contain", alt: "Maintenance" %>
         </div>
-        <h3 class="text-lg font-bold mb-2 text-[#808080]">守ります</h3>
-        <p class="text-xs text-gray-400 mb-3 uppercase tracking-wider">MAINTENANCE</p>
+        <h3 class="text-lg font-bold mb-2 text-[#808080]">代わります</h3>
+        <p class="text-xs text-gray-400 mb-3 uppercase tracking-wider">REPRESENT</p>
         <p class="text-gray-600 leading-relaxed text-sm">
-          システムの保守、メンテナンス、アップデート対応を行います。
+          貴社のIT担当として、社内・社外のあらゆるやり取りの取仕切りを行います。
         </p>
       <% end %>
 
-      <!-- 教えます (center, slightly larger) -->
+      <!-- 整えます (center, slightly larger) -->
       <%= link_to service_detail_path('education'), class: "order-first md:order-none relative w-full rounded-2xl hover:bg-gray-50 block h-full transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-gray-100" do %>
-        <span class="absolute bg-black text-white text-sm md:text-xs font-bold px-4 py-2 md:px-3 md:py-1.5 rounded-full tracking-wider z-20" style="top: 0; right: 0; margin-top: 0.5rem; margin-right: 0.5rem;">MAIN</span>
         <div class="p-6 h-full flex flex-col items-center text-center">
           <div class="w-14 h-14 mx-auto mb-5">
             <%= image_tag "icon_education.png", class: "w-full h-full object-contain", alt: "Education" %>
           </div>
-          <h3 class="text-lg font-bold mb-2 text-[#808080]">教えます</h3>
-          <p class="text-xs text-gray-400 mb-3 uppercase tracking-wider">EDUCATION</p>
+          <h3 class="text-lg font-bold mb-2 text-[#808080]">整えます</h3>
+          <p class="text-xs text-gray-400 mb-3 uppercase tracking-wider">SETUP</p>
           <p class="text-gray-600 leading-relaxed text-sm">
-            大人・子どもを問わず、一人ひとりに寄り添ったオーダーメイド型のプログラミング教育を提供しています。
+            PCを始めとしたIT機器の選定とそれを使用するWi-Fi環境等、働く環境を整えます。
           </p>
         </div>
       <% end %>

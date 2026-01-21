@@ -74,11 +74,11 @@
               <%= f.check_box :service_tags, { multiple: true, class: "h-4 w-4 text-black focus:ring-black border-gray-300 rounded" }, tag, nil %>
               <label class="ml-2 block text-sm text-gray-900">
                 <% service_names = {
-                  'education' => '教えます (Education)',
-                  'development' => '作ります (Development)',
-                  'maintenance' => '守ります (Maintenance)',
-                  'improvement' => '改善します (Improvement)',
-                  'consulting' => '相談乗ります (Consulting)'
+                  'education' => '整えます (SETUP)',
+                  'development' => '作ります (DEVELOPMENT)',
+                  'maintenance' => '代わります (REPRESENT)',
+                  'improvement' => '改善します (IMPROVEMENT)',
+                  'consulting' => '相談乗ります (CONSULTING)'
                 } %>
                 <%= service_names[tag] %>
               </label>
