@@ -44,6 +44,7 @@ class ServicesController < ApplicationController
       return
     end
 
-    @works = Work.published.where("service_tags LIKE ?", "%#{@service_type}%").order(year: :desc)
+    # Query works where service_tags JSON array contains the service_type
+    @works = Work.published.where("service_tags::text LIKE ?", "%#{@service_type}%").order(year: :desc)
   end
 end
