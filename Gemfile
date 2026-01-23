@@ -19,6 +19,7 @@ end
 group :production do
   gem "pg"
   gem "aws-sdk-s3", require: false
+  gem "rack-attack"
 end
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]

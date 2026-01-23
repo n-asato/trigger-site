@@ -23,9 +23,30 @@ class Work < ApplicationRecord
 
   scope :published, -> { where(is_published: true) }
 
-
+  # Validate image file types
+  validate :validate_main_image_content_type
+  validate :validate_gallery_images_content_type
 
   private
+
+  ALLOWED_IMAGE_TYPES = ['image/png', 'image/jpeg', 'image/gif', 'image/webp'].freeze
+
+  def validate_main_image_content_type
+    return unless main_image.attached?
+    unless ALLOWED_IMAGE_TYPES.include?(main_image.content_type)
+      errors.add(:main_image, 'must be a valid image format (PNG, JPEG, GIF, or WebP)')
+    end
+  end
+
+  def validate_gallery_images_content_type
+    return unless gallery_images.attached?
+    gallery_images.each do |image|
+      unless ALLOWED_IMAGE_TYPES.include?(image.content_type)
+        errors.add(:gallery_images, 'must all be valid image formats (PNG, JPEG, GIF, or WebP)')
+        break
+      end
+    end
+  end
 
   def generate_slug
     return if slug.present?

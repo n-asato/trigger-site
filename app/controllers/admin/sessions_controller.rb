@@ -10,6 +10,7 @@ class Admin::SessionsController < ApplicationController
     password = params[:password]
 
     if username == ENV['ADMIN_USERNAME'] && password == ENV['ADMIN_PASSWORD']
+      reset_session # Prevent session fixation attacks
       session[:admin_user_id] = "admin" # Simple session marker
       redirect_to admin_root_path, notice: "Logged in successfully."
     else
