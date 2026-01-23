@@ -9,8 +9,8 @@ module ApplicationHelper
       canonical: request.original_url,
       noindex: !Rails.env.production?,
       icon: [
-        { href: '/assets/favicon_t.png', type: 'image/png' },
-        { href: '/assets/favicon_t.png', rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' },
+        { href: image_path('favicon_t.png'), type: 'image/png' },
+        { href: image_path('favicon_t.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' },
       ],
       og: {
         site_name: 'TRiGGER | トリガー',
