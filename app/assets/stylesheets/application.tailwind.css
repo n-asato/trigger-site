@@ -13,6 +13,12 @@
   }
 }
 
+/* Contact form input border override */
+.contact-form-input {
+  border-color: #e5e7eb !important;
+  border-width: 1px !important;
+}
+
 /*
   @layer components {
     .btn-primary {

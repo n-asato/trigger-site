@@ -12,6 +12,7 @@
       <%= link_to "私について", about_path, class: "text-base font-medium text-gray-600 hover:text-black transition-colors" %>
       <%= link_to "できること", service_path, class: "text-base font-medium text-gray-600 hover:text-black transition-colors" %>
       <%= link_to "やってきたこと", works_path, class: "text-base font-medium text-gray-600 hover:text-black transition-colors" %>
+      <%= link_to "お問い合わせ", new_contact_path, class: "text-base font-medium text-gray-600 hover:text-black transition-colors" %>
     </nav>
 
     <!-- Mobile Menu Button -->
@@ -36,6 +37,7 @@
       <%= link_to "私について", about_path, class: "block px-6 py-3 text-lg font-medium text-gray-600 hover:bg-gray-50 hover:text-black transition-colors text-center", data: { action: "click->mobile-menu#close" } %>
       <%= link_to "できること", service_path, class: "block px-6 py-3 text-lg font-medium text-gray-600 hover:bg-gray-50 hover:text-black transition-colors text-center", data: { action: "click->mobile-menu#close" } %>
       <%= link_to "やってきたこと", works_path, class: "block px-6 py-3 text-lg font-medium text-gray-600 hover:bg-gray-50 hover:text-black transition-colors text-center", data: { action: "click->mobile-menu#close" } %>
+      <%= link_to "お問い合わせ", new_contact_path, class: "block px-6 py-3 text-lg font-medium text-gray-600 hover:bg-gray-50 hover:text-black transition-colors text-center", data: { action: "click->mobile-menu#close" } %>
     </nav>
   </div>
 </header>

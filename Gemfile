@@ -19,8 +19,9 @@ end
 group :production do
   gem "pg"
   gem "aws-sdk-s3", require: false
-  gem "rack-attack"
 end
+
+gem "rack-attack"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
@@ -60,6 +61,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
   gem "rspec-rails"
   gem "factory_bot_rails"
+  gem "letter_opener"
 end
 
 group :development do

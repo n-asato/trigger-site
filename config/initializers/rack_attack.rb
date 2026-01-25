@@ -25,6 +25,13 @@ class Rack::Attack
 
   # Custom response for throttled requests
   self.throttled_responder = lambda do |request|
-    [429, { 'Content-Type' => 'text/plain' }, ["Too many login attempts. Please try again later.\n"]]
+    [429, { 'Content-Type' => 'text/plain' }, ["Too many requests. Please try again later.\n"]]
+  end
+
+  # Throttle contact form submissions by IP address
+  throttle('contact/ip', limit: 5, period: 60.seconds) do |req|
+    if req.path == '/contact' && req.post?
+      req.ip
+    end
   end
 end
