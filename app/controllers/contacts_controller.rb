@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     if @contact.valid?
-      ContactMailer.send_email(@contact).deliver_now
+      SendgridMailer.send_contact_email(@contact)
       render :thanks
     else
       render :new, status: :unprocessable_entity

@@ -274,7 +274,10 @@ GEM
     ruby-vips (2.2.5)
       ffi (~> 1.12)
       logger
+    ruby_http_client (3.6.0)
     securerandom (0.4.1)
+    sendgrid-ruby (6.7.0)
+      ruby_http_client (~> 3.4)
     sprockets (4.2.2)
       concurrent-ruby (~> 1.0)
       logger
@@ -335,6 +338,7 @@ DEPENDENCIES
   rack-attack
   rails (~> 7.1.6)
   rspec-rails
+  sendgrid-ruby
   sprockets-rails
   sqlite3 (>= 1.4)
   stimulus-rails

@@ -79,3 +79,6 @@ end
 
 
 gem "meta-tags", "~> 2.22"
+
+# SendGrid Web API for email delivery (SMTP blocked by Render)
+gem "sendgrid-ruby"
