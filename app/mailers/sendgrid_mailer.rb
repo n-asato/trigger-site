@@ -38,4 +38,53 @@ class SendgridMailer
     Rails.logger.info "SendGrid response: #{response.status_code}"
     response
   end
+
+  def self.send_auto_reply(contact)
+    from = SendGrid::Email.new(email: 'asato@t-rigger.net', name: 'TRiGGER')
+    to = SendGrid::Email.new(email: contact.email, name: contact.name)
+    subject = "【TRiGGER】お問い合わせありがとうございます"
+    
+    content_text = <<~BODY
+      #{contact.name} 様
+
+      この度はTRiGGERへお問い合わせいただき、誠にありがとうございます。
+
+      以下の内容でお問い合わせを受け付けました。
+      3営業日以内にご連絡させていただきますので、今しばらくお待ちください。
+
+      ─────────────────────────────────
+      ■会社名
+      #{contact.company_name}
+
+      ■担当者名
+      #{contact.name}
+
+      ■メールアドレス
+      #{contact.email}
+
+      ■件名
+      #{contact.subject}
+
+      ■ご相談内容
+      #{contact.message}
+      ─────────────────────────────────
+
+      ※このメールは自動送信されています。
+      ※本メールにお心当たりのない場合は、お手数ですが破棄していただきますようお願いいたします。
+
+      ──────────────────
+      TRiGGER
+      Email: info@t-rigger.net
+      ──────────────────
+    BODY
+
+    content = SendGrid::Content.new(type: 'text/plain', value: content_text)
+    mail = SendGrid::Mail.new(from, subject, to, content)
+    
+    sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
+    response = sg.client.mail._('send').post(request_body: mail.to_json)
+    
+    Rails.logger.info "SendGrid auto-reply response: #{response.status_code}"
+    response
+  end
 end

@@ -7,10 +7,14 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.valid?
       SendgridMailer.send_contact_email(@contact)
-      render :thanks
+      SendgridMailer.send_auto_reply(@contact)
+      redirect_to thanks_contacts_path
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def thanks
   end
 
   private
