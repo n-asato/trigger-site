@@ -34,6 +34,7 @@ SitemapGenerator::Sitemap.create do
   end
 
   add "/works", priority: 0.8, changefreq: 'weekly'
+  add "/contact", priority: 0.7, changefreq: 'monthly'
   
   # Published works
   Work.published.find_each do |work|
