@@ -10,4 +10,7 @@ bundle exec rake assets:clean
 echo "--- Running migrations ---"
 bundle exec rake db:migrate
 
+echo "--- Generating sitemap ---"
+bundle exec rake sitemap:refresh
+
 echo "--- Build complete ---"
