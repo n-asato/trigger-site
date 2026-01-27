@@ -4,8 +4,8 @@ module ApplicationHelper
       site: 'TRiGGER | トリガー',
       reverse: true,
       separator: '|',
-      description: '安里 直人による介護・福祉業界向けIT支援サービス TRiGGER',
-      keywords: '介護, 福祉, IT支援, 業務改善, デジタル化, トリガー',
+      description: '愛知県名古屋市名東区を拠点に、介護・福祉業界のデジタル化を推進するIT支援サービスTRiGGER。システムエンジニア経験を活かしたITコンサルタントとして、業務改善やPC環境整備、Web制作など、現場の"やりたい事"をITで実現します。',
+      keywords: '愛知県, 名古屋市, 名東区, 介護, 福祉, IT支援, ITコンサルタント, システムエンジニア, 業務改善, デジタル化, トリガー, TRiGGER',
       canonical: request.original_url,
       noindex: !Rails.env.production?,
       icon: [
@@ -15,7 +15,7 @@ module ApplicationHelper
       og: {
         site_name: 'TRiGGER | トリガー',
         title: 'TRiGGER | トリガー',
-        description: '安里 直人による介護・福祉業界向けIT支援サービス TRiGGER',
+        description: '愛知県名古屋市名東区を拠点に、介護・福祉業界のデジタル化を推進するIT支援サービスTRiGGER。システムエンジニア経験を活かしたITコンサルタントとして現場をサポートします。',
         type: 'website',
         url: request.original_url,
         image: '/apple-touch-icon.png',
