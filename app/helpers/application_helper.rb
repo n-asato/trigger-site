@@ -1,7 +1,7 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      site: 'TRiGGER | トリガー',
+      site: '愛知・名古屋の介護IT支援 TRiGGER｜愛知県の業務改善サポート',
       reverse: true,
       separator: '|',
       description: '愛知県名古屋市名東区を拠点に、介護・福祉業界のデジタル化を推進するIT支援サービスTRiGGER。システムエンジニア経験を活かしたITコンサルタントとして、業務改善やPC環境整備、ホームページ制作、Web制作など、現場の"やりたい事"をITで実現します。',
@@ -13,8 +13,8 @@ module ApplicationHelper
         { href: image_path('favicon_t.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' },
       ],
       og: {
-        site_name: 'TRiGGER | トリガー',
-        title: 'TRiGGER | トリガー',
+        site_name: '愛知・名古屋の介護IT支援 TRiGGER',
+        title: '愛知・名古屋の介護IT支援 TRiGGER｜愛知県の業務改善サポート',
         description: '愛知県名古屋市名東区を拠点に、介護・福祉業界のデジタル化を推進するIT支援サービスTRiGGER。システムエンジニア経験を活かしたITコンサルタントとして、ホームページ制作や業務改善をサポートします。',
         type: 'website',
         url: request.original_url,
