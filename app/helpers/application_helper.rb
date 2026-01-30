@@ -9,8 +9,8 @@ module ApplicationHelper
       canonical: request.original_url,
       noindex: !Rails.env.production?,
       icon: [
-        { href: image_path('favicon_t.png'), type: 'image/png' },
-        { href: image_path('favicon_t.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' },
+        { href: image_path('favicon_trigger.png'), type: 'image/png' },
+        { href: image_path('favicon_trigger.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' },
       ],
       og: {
         site_name: '愛知・名古屋の介護DX・介護IT 支援 TRiGGER',
